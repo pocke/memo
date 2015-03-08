@@ -32,8 +32,7 @@ class SessionsController < ApplicationController
     redirect_to root_path; return
   end
 
-  # Logout
-  def destroy
+  def signout
     session[:user_id] = nil
     redirect_to root_path
   end

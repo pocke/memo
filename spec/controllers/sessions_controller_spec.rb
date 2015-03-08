@@ -36,8 +36,8 @@ describe SessionsController do
     end
   end
 
-  describe '#destroy' do
-    before{delete :destroy}
+  describe '#signout' do
+    before{get :signout}
     it{is_expected.to redirect_to root_path}
   end
 end
