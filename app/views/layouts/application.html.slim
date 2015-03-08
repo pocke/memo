@@ -1,0 +1,22 @@
+DOCTYPE
+html
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = stylesheet_link_tag "application", media: "all"
+    title Memomo
+    = csrf_meta_tags
+
+
+body
+  == yield
+
+  footer.navbar.navbar-default.navbar-fixed-bottom role='contentinfo'
+    .container
+      p.navbar-text
+        | Copyright &copy; 2015&nbsp;
+        a href="https://github.com/pocke" pocke&nbsp;
+        | Licensed&nbsp;
+        a href="http://www.opensource.org/licenses/mit-license.php" target="_blank" MIT
+
+  = javascript_include_tag "application"
