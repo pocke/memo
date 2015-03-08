@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def current_user
+    return User.find(session[:user_id]) rescue nil
+  end
 end
