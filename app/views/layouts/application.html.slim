@@ -9,6 +9,12 @@ html
 
 
 body
+  nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        a.navbar-brand href="#{root_path}" Memomo
+
+
   .container
     - if flash.alert
       .alert.alert-danger.fade.in
@@ -21,7 +27,9 @@ body
         button.close type="button" aria-label="Close" data-dismiss="alert"
           span aria-hidden="true" &times;
 
+
     == yield
+
 
   footer.navbar.navbar-default.navbar-fixed-bottom role='contentinfo'
     .container
