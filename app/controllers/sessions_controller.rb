@@ -10,12 +10,14 @@ class SessionsController < ApplicationController
     pass    = params.require(:password)
     user    = User.find_by(id_name: id_name)
 
-    if user && user.authenticate(pass)
-      session[:user_id] = user.id
-      redirect_to root_path
-    else
-      redirect_to action: :new
+    unless user && user.authenticate(pass)
+      flash.alert = "ユーザー認証に失敗しました。"
+      redirect_to action: :new; return
     end
+
+    session[:user_id] = user.id
+    flash.notice = 'Sign in が完了しました。'
+    redirect_to root_path; return
   end
 
   # Logout

@@ -14,7 +14,6 @@ describe SessionsController do
     before{req}
 
     context 'when user does not exists' do
-
       it{is_expected.to redirect_to action: :new}
     end
 
