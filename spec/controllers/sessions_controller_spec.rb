@@ -1,8 +1,6 @@
 require_relative '../rails_helper'
 
 describe SessionsController do
-  subject{response}
-
   describe '#new' do
     let(:req){get :new}
     before{req}
@@ -40,6 +38,7 @@ describe SessionsController do
   end
 
   describe '#destroy' do
+    before{delete :destroy}
     it{is_expected.to redirect_to root_path}
   end
 end
