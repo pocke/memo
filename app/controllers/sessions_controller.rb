@@ -6,13 +6,25 @@ class SessionsController < ApplicationController
 
   # Login
   def create
-    id_name = params.require(:id_name)
-    pass    = params.require(:password)
-    user    = User.find_by(id_name: id_name)
+    id_name = params[:id_name]
+    pass    = params[:password]
+
+    e = -> (msg) {
+      flash.alert = msg
+      redirect_to action: :new
+    }
+    if id_name.blank?
+      e.("IDを入力してください。");return
+    end
+
+    if pass.blank?
+      e.("passwordを入力してください。");return
+    end
+
+    user = User.find_by(id_name: id_name)
 
     unless user && user.authenticate(pass)
-      flash.alert = "ユーザー認証に失敗しました。"
-      redirect_to action: :new; return
+      e.("ユーザー認証に失敗しました。");return
     end
 
     session[:user_id] = user.id
