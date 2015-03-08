@@ -1,17 +1,15 @@
 h2.page-header Sign in
 
-.row
+= form_tag sessions_path, class: 'form-horizontal'
+  .form-group
+    label.control-label.col-xs-2 for="id_name" ID
+    .col-xs-6
+      input#id_name.form-control type="text" name="id_name"
+  .form-group
+    label.control-label.col-xs-2 for="password" password
+    .col-xs-6
+      input#password.form-control type="password" name="password"
 
-  = form_tag sessions_path, class: 'form-horizontal'
-    .form-group
-      label.control-label.col-sm-2 for="id_name" ID
-      .col-sm-6
-        input#id_name.form-control type="text" name="id_name"
-    .form-group
-      label.control-label.col-sm-2 for="password" password
-      .col-sm-6
-        input#password.form-control type="password" name="password"
-
-    .form-group
-      .col-sm-6.col-sm-offset-2
-        button.btn.btn-primary Sign in
+  .form-group
+    .col-xs-6.col-xs-offset-2
+      button.btn.btn-primary Sign in
