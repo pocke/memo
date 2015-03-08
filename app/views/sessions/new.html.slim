@@ -1,1 +1,18 @@
-h2 Login
+h2.page-header Sign in
+
+.row
+
+  form.form-horizontal
+    .form-group
+      label.control-label.col-sm-2 for="id_name" ID
+      .col-sm-6
+        input#id_name.form-control type="text"
+    .form-group
+      label.control-label.col-sm-2 for="password" password
+      .col-sm-6
+        input#password.form-control type="password"
+
+    .form-group
+      .col-sm-6.col-sm-offset-2
+        button.btn.btn-primary Sign in
+        button.btn.btn-link Cancel
