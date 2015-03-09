@@ -5,5 +5,8 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'root#root'
+  resources :boards
+  resources :memos
+
+  root 'boards#index'
 end

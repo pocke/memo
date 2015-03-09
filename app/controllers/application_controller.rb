@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def login_check
     unless session[:user_id]
-      redirect_to root_path
+      redirect_to new_session_path
     end
   end
 

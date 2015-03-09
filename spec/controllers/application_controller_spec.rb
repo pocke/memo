@@ -12,7 +12,7 @@ describe ApplicationController do
 
     context 'when not login' do
       before{req}
-      it{is_expected.to redirect_to root_path}
+      it{is_expected.to redirect_to new_session_path}
     end
 
     context 'when login' do
