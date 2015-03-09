@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require bootstrap
+//= require vue
+//= require lodash
 //= require_tree .
