@@ -5,6 +5,5 @@ Rails.application.routes.draw do
     end
   end
 
-  # for test
-  root 'sessions#new'
+  root 'root#root'
 end
