@@ -6,22 +6,32 @@
 
   new Vue({
     el: el_id,
+    data: {
+      boards: BOARDS,
+    },
+
     methods: {
       AddBoard: function () {
         var board_name = window.prompt("Pleas input board name.");
         if (!board_name) {return;}
 
+        var self = this;
         $.ajax({
           url: '/boards/',
           type: 'POST',
           data: {
             name: board_name,
           },
-        }).done(function () {
+        }).done(function (data) {
+          self.boards.push(data);
           alert('Done!');
+        }).fail(function (xhr) {
+          alert(xhr.responseText);
         });
       },
     },
+
     computed: {},
   });
+
 })();

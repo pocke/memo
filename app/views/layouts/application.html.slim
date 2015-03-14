@@ -53,4 +53,7 @@ body
         | Licensed&nbsp;
         a href="http://www.opensource.org/licenses/mit-license.php" target="_blank" MIT
 
+  javascript:
+    var BOARDS = #{{@boards.to_json}}
+
   = javascript_include_tag "application"

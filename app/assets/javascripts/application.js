@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require rails
 //= require bootstrap
 //= require vue
 //= require lodash

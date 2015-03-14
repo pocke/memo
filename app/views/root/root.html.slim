@@ -3,7 +3,7 @@
   .col-xs-3
     h4 Boards
     .list-group
-      a.list-group-item href="#" hoge
+      a.list-group-item href="#" v-repeat="boards" {{name}}
       hr
       button.btn.btn-primary.btn-sm v-on="click: AddBoard()" New Board
 
