@@ -1,11 +1,11 @@
-.row
+.row#root
 
   .col-xs-3
     h4 Boards
     .list-group
       a.list-group-item href="#" hoge
       hr
-      button.btn.btn-primary.btn-sm New Board
+      button.btn.btn-primary.btn-sm v-on="click: AddBoard()" New Board
 
   .col-xs-9
     h4 Memos
