@@ -4,7 +4,7 @@ html
     meta charset="UTF-8"
     meta name="viewport" content="width=device-width, initial-scale=1"
     = stylesheet_link_tag "application", media: "all"
-    title Memomo
+    title Memo
     = csrf_meta_tags
 
 
@@ -17,7 +17,7 @@ body
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand href="#{root_path}" Memomo
+        a.navbar-brand href="#{root_path}" Memo
       .navbar-collapse.collapse#navbar-top-collapse
         ul.nav.navbar-nav
           - if current_user
