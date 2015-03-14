@@ -19,4 +19,22 @@ describe BoardsController do
       expect(assigns[:board].name).to eq name
     end
   end
+
+  describe '#show' do
+    let(:board){create(:board)}
+
+    let(:req){get :show, id: board.id}
+    before do
+      create(:memo, board: board)
+    end
+    before{req}
+
+    it 'should assign @board' do
+      expect(assigns[:board]).to eq board
+    end
+
+    it 'should assign @memos' do
+      expect(assigns[:memos]).to eq board.memos
+    end
+  end
 end

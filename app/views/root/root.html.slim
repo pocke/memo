@@ -3,9 +3,11 @@
   .col-xs-3
     h4 Boards
     .list-group
-      a.list-group-item href="#" v-repeat="boards" {{name}}
+      a.list-group-item href="#" v-repeat="boards" v-text="name" v-on="click: show(id)"
       hr
       button.btn.btn-primary.btn-sm v-on="click: AddBoard()" New Board
 
-  .col-xs-9
-    h4 Memos
+  .col-xs-9 v-if="current"
+    h4 v-text="current.name"
+
+    div v-repeat="current.memos" v-text="text"

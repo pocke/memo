@@ -8,6 +8,7 @@
     el: el_id,
     data: {
       boards: BOARDS,
+      current: null,
     },
 
     methods: {
@@ -22,9 +23,21 @@
           data: {
             name: board_name,
           },
-        }).done(function (data) {
-          self.boards.push(data);
-          alert('Done!');
+        }).done(function (board) {
+          self.boards.push(board);
+          self.show(board.id);
+        }).fail(function (xhr) {
+          alert(xhr.responseText);
+        });
+      },
+
+      show: function (id) {
+        var self = this;
+        $.ajax({
+          url: '/boards/' + id,
+          type: 'GET',
+        }).done(function (board) {
+          self.current = board;
         }).fail(function (xhr) {
           alert(xhr.responseText);
         });

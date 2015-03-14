@@ -19,4 +19,12 @@ class BoardsController < ApplicationController
 
     render json: @board and return
   end
+
+  # GET /boards/:id
+  def show
+    id = params.require(:id)
+
+    @board = Board.find(id)
+    @memos = @board.memos
+  end
 end
