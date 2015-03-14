@@ -8,6 +8,9 @@
       button.btn.btn-primary.btn-sm v-on="click: AddBoard()" New Board
 
   .col-xs-9 v-if="current"
-    h4 v-text="current.name"
+    h4
+      span v-text="current.name"
+      | &nbsp;
+      small v-text="current.description"
 
     div v-repeat="current.memos" v-text="text"
