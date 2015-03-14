@@ -3,7 +3,7 @@
   .col-xs-3
     h4 Boards
     .list-group
-      a.list-group-item href="#" v-repeat="boards" v-text="name" v-on="click: show(id)"
+      a.list-group-item href="#" v-repeat="boards" v-text="name" v-on="click: show(id)" v-class="active: current.id === id"
       hr
       button.btn.btn-primary.btn-sm v-on="click: AddBoard()" New Board
 
